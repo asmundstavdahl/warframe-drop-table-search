@@ -13,7 +13,9 @@ function updateResults(pattern) {
             return
         }
 
-        pattern = pattern.trim()
+        pattern = pattern.trimLeft()
+
+	location.hash = `#${pattern}`
 
         let matchingItems = Object.keys(dropItems)
             .filter(
@@ -21,7 +23,7 @@ function updateResults(pattern) {
                     .includes(pattern))
 
         if (matchingItems.length === 0) {
-            alert("No matches. If you're looking for a relic then it's probably vaulted.")
+            //alert("No matches. If you're looking for a relic then it's probably vaulted.")
             return
         }
 
@@ -95,3 +97,9 @@ document.body.addEventListener("keydown", activatePatternInputOnEsc)
 
 patternInput.focus()
 patternInput.select()
+
+if (location.hash.length >= 2) {
+	let patternFromHash = decodeURIComponent(location.hash.substr(1))
+	patternInput.value = patternFromHash
+	updateResults(patternFromHash)
+}
