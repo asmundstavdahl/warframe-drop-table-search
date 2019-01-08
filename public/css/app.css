@@ -1,0 +1,36 @@
+.flex {
+    display: flex;
+    border-collapse: collapse;
+}
+
+.flex.row {
+    flex-direction: row;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+fieldset {
+    margin: auto;
+    width: 32rem;
+    font-size: 150%;
+}
+
+fieldset input {
+    width: 100%;
+}
+
+code {
+    white-space: pre;
+}
+
+code li {
+    margin-left: 2rem;
+}
+
+#results1,
+#results2 {
+    width: 50%;
+}
