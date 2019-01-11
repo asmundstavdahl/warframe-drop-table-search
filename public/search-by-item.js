@@ -15,7 +15,7 @@ function updateResults(pattern) {
 
         pattern = pattern.trimLeft()
 
-	location.hash = `#${pattern}`
+        location.hash = `#${pattern}`
 
         let matchingItems = Object.keys(dropItems)
             .filter(
@@ -99,7 +99,7 @@ patternInput.focus()
 patternInput.select()
 
 if (location.hash.length >= 2) {
-	let patternFromHash = decodeURIComponent(location.hash.substr(1))
-	patternInput.value = patternFromHash
-	updateResults(patternFromHash)
+    let patternFromHash = decodeURIComponent(location.hash.substr(1))
+    patternInput.value = patternFromHash
+    updateResults(patternFromHash)
 }
